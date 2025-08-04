@@ -39,3 +39,10 @@ function sortearAmigo() {
         lista.innerHTML = `El amigo secreto es: <strong>${amigoSeleccionado}</strong>`;
     }
 }
+
+function resetear() {
+    // Limpia la lista de amigos y el campo de texto.
+    amigos = [];
+    textoAmigo.value = "";
+    lista.innerHTML = '';
+}
