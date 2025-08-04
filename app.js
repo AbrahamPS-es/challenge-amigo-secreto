@@ -46,3 +46,5 @@ function resetear() {
     textoAmigo.value = "";
     lista.innerHTML = '';
 }
+
+//? Agregar animaciones y estilos para mejorar la experiencia del usuario.
