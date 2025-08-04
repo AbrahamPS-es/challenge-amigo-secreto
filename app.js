@@ -31,6 +31,7 @@ function agregarAmigo(){
 }
 
 function sortearAmigo() {
+    // Esta función se encarga de seleccionar un amigo al azar de la lista y mostrarlo en la interfaz.
     if (amigos.length==0) {
         // Si la lista de amigos está vacía, muestra un mensaje de alerta.
         alert("No hay amigos para revisar.");
@@ -38,15 +39,17 @@ function sortearAmigo() {
         let numeroAleatorio = Math.floor(Math.random() * amigos.length);
         let amigoSeleccionado = amigos[numeroAleatorio];
         listaResultado.innerHTML = `El amigo secreto es: <strong>${amigoSeleccionado}</strong>`;
+        // Llama a la función de confeti para celebrar el sorteo.
         confetti(
             {
-                particleCount: 100,
+                particleCount: 150,
                 spread: 70,
                 origin: { y: 0.6 },
                 colors: ['#ff0000', '#00ff00', '#0000ff']
             }
-        ); // Llama a la función de confeti para celebrar el sorteo.
+        );
     }
+    document.getElementById("botonSortear").setAttribute("disabled", "true");
 }
 
 function resetear() {
@@ -55,6 +58,7 @@ function resetear() {
     textoAmigo.value = "";
     listaAmigos.innerHTML = '';
     listaResultado.innerHTML = '';
+    document.getElementById("botonSortear").removeAttribute("disabled");
 }
 
 //? Agregar animaciones y estilos para mejorar la experiencia del usuario.
