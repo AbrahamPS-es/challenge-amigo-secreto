@@ -1,7 +1,8 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos = [];
 let textoAmigo = document.getElementById("amigo");
-const lista=document.getElementById('listaAmigos');
+const listaAmigos=document.getElementById('listaAmigos');
+const listaResultado = document.getElementById('resultado');
 
 // Esta función se encarga de validar la entrada del usuario y agregar el nombre del amigo a la lista si es válido.
 function validarEntrada() {
@@ -16,10 +17,10 @@ function validarEntrada() {
 }
 
 function agregarAmigoLista() {
-    lista.innerHTML=''; // Limpia la lista antes de agregar los nuevos amigos
+    listaAmigos.innerHTML=''; // Limpia la lista antes de agregar los nuevos amigos
     // Recorre la lista de amigos y los agrega al elemento HTML correspondiente.
     for (let i = 0; i < amigos.length; i++) {
-        lista.innerHTML += `<li>${amigos[i]}</li>`;
+        listaAmigos.innerHTML += `<li>${amigos[i]}</li>`;
     }
 }
 
@@ -36,7 +37,15 @@ function sortearAmigo() {
     }else{
         let numeroAleatorio = Math.floor(Math.random() * amigos.length);
         let amigoSeleccionado = amigos[numeroAleatorio];
-        lista.innerHTML = `El amigo secreto es: <strong>${amigoSeleccionado}</strong>`;
+        listaResultado.innerHTML = `El amigo secreto es: <strong>${amigoSeleccionado}</strong>`;
+        confetti(
+            {
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ff0000', '#00ff00', '#0000ff']
+            }
+        ); // Llama a la función de confeti para celebrar el sorteo.
     }
 }
 
@@ -44,7 +53,8 @@ function resetear() {
     // Limpia la lista de amigos y el campo de texto.
     amigos = [];
     textoAmigo.value = "";
-    lista.innerHTML = '';
+    listaAmigos.innerHTML = '';
+    listaResultado.innerHTML = '';
 }
 
 //? Agregar animaciones y estilos para mejorar la experiencia del usuario.

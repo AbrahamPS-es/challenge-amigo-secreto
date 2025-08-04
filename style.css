@@ -135,12 +135,31 @@ ul {
     margin: 20px 0;
 }
 
+li{
+    padding: 5px;
+    text-align: center;
+}
+
+li:hover {
+    background-color: var(--color-tertiary);
+    border-radius: 10px;
+    padding: 7px;
+    cursor: pointer;
+}
+
 .result-list {
     margin-top: 15px;
     color: #05DF05;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
+}
+
+.result-list:hover {
+    background-color: #baf1b6;
+    border-radius: 10px;
+    padding: 7px;
+    cursor: pointer;
 }
 
 /* Botón de sortear título */
@@ -154,6 +173,7 @@ ul {
     font-size: 16px;
 }
 
+/* Estilos de botón de sortear */
 .button-draw img {
     margin-right: 40px;
 }
